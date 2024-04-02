@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hava durumu</title>
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Hava durumu uygulaması</h1>
+        <form action="/">
+            <label for="city">Şehri gir:</label>
+            <input type="text" name="city">
+            <button type="submit">arat</button>
+        </form>
+        <% if(locals.data){ %>
+        <h2>Hava durumu</h2>
+        <p>Şehir:<%= data.name %></p>
+        <p>Hava:<%= data.weather[0].description %></p>
+        <p>Derece:<%= data.main.temp %> C</p>
+        <p>Hissedilen Derece:<%= data.main.feels_like %> C</p>
+        <p>Min Derece:<%= data.main.temp_min %> C</p>
+        <p>Max Derece:<%= data.main.temp_max %> C</p>
+        <p>Nem:%<%= data.main.humidity %></p>
+        <p>Rüzgar hızı:<%= data.wind.speed %></p>
+
+        <% } %>
+    </div>
+    <footer>
+        <p>Powered by OpenWeatherMap API</p>
+    </footer>
+</body>
+</html>
