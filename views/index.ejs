@@ -13,7 +13,7 @@
             <input type="text" name="city">
             <button type="submit">arat</button>
         </form>
-        <% if(locals.data){ %>
+        <% if(data && data.weather && data.weather.length > 0){ %>
         <h2>Hava durumu</h2>
         <p>Şehir:<%= data.name %></p>
         <p>Hava:<%= data.weather[0].description %></p>
@@ -21,7 +21,7 @@
         <p>Hissedilen Derece:<%= data.main.feels_like %> C</p>
         <p>Min Derece:<%= data.main.temp_min %> C</p>
         <p>Max Derece:<%= data.main.temp_max %> C</p>
-        <p>Nem:%<%= data.main.humidity %></p>
+        <p>Nem:<%= data.main.humidity %>%</p>
         <p>Rüzgar hızı:<%= data.wind.speed %></p>
 
         <% } %>
